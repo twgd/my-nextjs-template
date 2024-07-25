@@ -1,3 +1,19 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "extends": ["next/core-web-vitals", "plugin:tailwindcss/recommended", "prettier"],
+  "rules": {
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/classnames-order": "off"
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": ["classnames", "clsx", "cn", "cva"]
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parser": "@typescript-eslint/parser"
+    }
+  ]
 }
